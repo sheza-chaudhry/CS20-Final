@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* The box-sizing property allows us to include the padding and border in an element's total width and height. */
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* ADD TO FIX HEADER  */
+    overflow-x:auto; /* Hide horizontal scrollbar */
+    /* For Planning Purposes */
+    font-weight: bold;
+
+
+
+}
+
+
+
+/* Main Div Styling  */
+
+.bold{
+    font-weight: 600;
+}
+
+.main-content {
+    position: relative;
+    background-color: #eee;
+    min-height: 100vh;
+    top:0;
+    transition: all 0.5s ease;
+    /* padding: 1rem; */
+}
+
+.container{
+    text-align: center;
+    display: grid;
+    justify-content: space-between;
+    height: 100vh; 
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 48px 500px 300px 624.3px 100px;
+    grid-template-areas: 
+    "nav" 
+    "about-us"
+    "testimonials"
+    "content1"
+    "footer"
+;
+}
+
+
+#navbar{
+    text-align: left;
+    grid-area: nav;
+    position: fixed;
+    overflow-x: scroll;
+    width: 100%;
+    /* Issue with sidebar (Not sticking to left of screen) */
+    height: 48px;
+    background-color:#12171e;
+    color: #eee;
+}
+
+#about-us{
+    grid-area: about-us;
+    background-color: gray;
+    overflow: auto;
+
+}
+
+#content1{
+    grid-area: content1;
+    background-color: blue;
+
+}
+
+#testimonials{
+    grid-area: testimonials;
+    background-color: beige;
+}
+
+#footer{
+    grid-area: footer;
+    background-color: green;
+
+}
+
+/* Rules from Sheza's Midterm Form  */
+
+#form, #afterSubmit {
+    border-radius: 20px;
+    background-color: #432818;
+    padding: 20px;
+    width: 75%;
+    height: 75%;
+    display: block;
+    margin: auto;
+    position: relative; 
+    top:30px;
+    color: white;
+}
