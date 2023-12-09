@@ -29,55 +29,48 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
             </div>
             <i class = "bx bx-menu" id = "btn"></i>
         </div>
-        <div class="user">
-            <img src="user-img.png" alt="avacado toast" class = "user-img">
-            <div>
-                <p class="bold"> Username </p>
-                <p> Admin</p>
-            </div>
-        </div>
         <ul>
             <li>
                 <a href = "#">
                     <i class = "bx bxs-grid-alt"></i>
-                    <span class = "nav-item"> Dashboard</span>
+                    <span class = "nav-item"> User Info</span>
                 </a>
-                <span class="tooltip">Dashboard</span>
+                <span class="tooltip"> User Info</span>
             </li>
             <li>
                 <a href = "#">
                     <i class = "bx bxs-shopping-bag"></i>
-                    <span class = "nav-item"> Products</span>
+                    <span class = "nav-item"> Destination</span>
                 </a>
-                <span class="tooltip">Products</span>
+                <span class="tooltip">Destination</span>
             </li>
             <li>
                 <a href = "#">
                     <i class = "bx bx-list-check"></i>
-                    <span class = "nav-item"> Categories</span>
+                    <span class = "nav-item"> Airfare</span>
                 </a>
-                <span class="tooltip">Categories</span>
+                <span class="tooltip">Airfare</span>
             </li>
             <li>
                 <a href = "#">
                     <i class = "bx bxs-food-menu"></i>
-                    <span class = "nav-item"> Orders</span>
+                    <span class = "nav-item"> Hotels</span>
                 </a>
-                <span class="tooltip">Orders</span>
+                <span class="tooltip">Hotels</span>
             </li>
             <li>
                 <a href = "#">
                     <i class = "bx bx-body"></i>
-                    <span class = "nav-item"> Customers</span>
+                    <span class = "nav-item"> Itenerary</span>
                 </a>
-                <span class="tooltip">Customers</span>
+                <span class="tooltip">Itenerary</span>
             </li>
             <li>
                 <a href = "#">
                     <i class = "bx bx-location-plus"></i>
-                    <span class = "nav-item"> Shipping</span>
+                    <span class = "nav-item"> Receipt</span>
                 </a>
-                <span class="tooltip">Shipping</span>
+                <span class="tooltip">Receipt</span>
             </li>
             <li>
                 <a href = "#">
@@ -107,33 +100,37 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
             <!-- Info about the user form -->
             <div id="main">
                 Information about form for user
+                <p> Alright, let's start by grabbing the key info we need for the trip</p>
             </div>
            
             <!-- User Form -->
             <div id="user-form">
-                Filler Form  (Not Final Credit: Sheza from Midterm )
                 <div id="form" style="position: relative; top:30px;">
                     <form method="get" action="#">
                         <label for="fname">First name:</label>
                         <input type="text" id="fname" name="fname"><br>
-            
+
                         <label for="lname">Last name:</label>
                         <input type="text" id="lname" name="lname"><br>
-        
-                        <label for="why">What are you reaching about?</label><br>
-                        <input type="checkbox" value="menuquestion">
-                        <label for="question">Menu or inquiries</label><br>
-                        <input type="checkbox" value="complain">
-                        <label for="question">File a complaint</label><br>
-                        <input type="checkbox" value="suggestion">
-                        <label for="question">Suggestions</label><br>
-                        <input type="checkbox" value="catering">
-                        <label for="question">Catering</label><br>
-                        <input type="checkbox" value="reservation">
-                        <label for="question">Make a reservation</label><br> <br>
+
+                        <label for="email">Email Address:</label>
+                        <input type="text" id="email" name="email"><br>
+
+                        <label for="phone">Phone Number:</label>
+                        <input type="text" id="phone" name="phone"><br>
+
+                        <label for="zip">Zip Code:</label>
+                        <input type="text" id="zip" name="zip"><br>
+
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city"><br>
+
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address"><br>
+                        
             
-                        <label for="preference">How would you like to get contacted about your inquiry? </label>
-                        <select id="preference">
+                        <!-- <label for="preference">How would you like to get contacted about your inquiry? </label> -->
+                        <!-- <select id="preference">
                             <option>-- select an option --</option>
                             <option>Phone</option>
                             <option>Email</option>
@@ -143,7 +140,7 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
                         <input id="phoneOrEmail" type="hidden"><br>
             
                         <label for="message">Message: </label>
-                        <input type="text" id="message"><br>
+                        <input type="text" id="message"><br> -->
         
                         <input type="button" id="submit" value="Submit">
                     </form>
@@ -154,6 +151,8 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
             <!-- Place for Next/Back Buttons  -->
             <div id="footer">
                 Buttons Placed Within
+                <br>
+                <button type="button" onclick=""> Next </button>
             </div>
 
         </div>

@@ -8,9 +8,6 @@
     overflow-x:auto; /* Hide horizontal scrollbar */
     /* For Planning Purposes */
     font-weight: bold;
-
-
-
 }
 
 
@@ -122,7 +119,7 @@
     height: 50px;
     width: 90%;
     margin: 0.8rem auto;
-    line-height: 50px;
+    /* line-height: 50px;  Was messing up side icon*/ 
 }
 
 .sidebar ul li a{
@@ -227,7 +224,8 @@
 
 #user-form{
     grid-area: user-form;
-    background-color: blue;
+    background-color: #eee;
+    color: #12171e;
 
 }
 
@@ -242,12 +240,16 @@
 #form, #afterSubmit {
     border-radius: 20px;
     background-color: #432818;
+    color: #12171e;
     padding: 20px;
     width: 75%;
     height: 75%;
     display: block;
     margin: auto;
     position: relative; 
-    top:30px;
-    color: white;
+    top:30px;   
+}
+
+#form input{
+    margin: 20px;
 }
