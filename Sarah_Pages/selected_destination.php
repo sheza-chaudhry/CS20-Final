@@ -130,11 +130,11 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
                     <option value = "1"> 4 </option>
                     <option value = "1"> 5 </option>
                 </select>
+                <input type= "submit">
                 <?php
                     $location = $_REQUEST['locations'];
-                    echo "<input type = 'hidden' name = 'location' value =".$location;
+                    echo "<input type = 'hidden' name = 'location' value =".$location. ">";
                 ?> 
-                <input type="submit">
 
             </form>
 
