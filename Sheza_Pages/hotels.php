@@ -3,73 +3,84 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <link rel="stylesheet" type = "text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 
-    <header>
-
-    </header>
-
     <body>
+        <!-- <div id='navbar'>
+            <a href='index.html'>
+                <img src='images/TravelMate.png' alt ='TravelMate Logo' width='125'>
+            </a>
+            <ul id='navbar-menu'>
+                <li><a href='#'>ABOUT US</a></li>
+                <li><a href='#'>CONTACT</a></li>
+                <li><a href='#'>REVIEWS</a></li>
+            </ul>
+            <button id='menu-button' class='menu-button'>&#9776;</button>
+            <ul class='mobile-menu'>
+                <li><a href='#'>ABOUT US</a></li>
+                <li><a href='#'>CONTACT</a></li>
+                <li><a href='#'>REVIEWS</a></li>
+            </ul>
+        </div> -->
+
+        <div class='sidebar'>
+            <div class='top'>
+                <div class='logo'>
+                    <i class = 'bx bxl-codepen'> </i>
+                    <span>CodeCommerce</span>
+                </div>
+                <i class = 'bx bx-menu' id = 'btn'></i>
+            </div>
+            <div class='user'>
+                <img src='user-img.png' alt='avacado toast' class = 'user-img'>
+                <div>
+                    <p class='bold'> Username </p>
+                    <p> Admin</p>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <a href = '#'>
+                        <i class = 'bx bxs-grid-alt'></i>
+                        <span class = 'nav-item'> Destinations</span>
+                    </a>
+                    <span class='tooltip'>Destinations</span>
+                </li>
+                <li>
+                    <a href = '#'>
+                        <i class = 'bx bxs-shopping-bag'></i>
+                        <span class = 'nav-item'> Tickets</span>
+                    </a>
+                    <span class='tooltip'>Tickets</span>
+                </li>
+                <li>
+                    <a href = '#'>
+                        <i class = 'bx bx-list-check'></i>
+                        <span class = 'nav-item'> Hotels</span>
+                    </a>
+                    <span class='tooltip'>Hotels</span>
+                </li>
+                <li>
+                    <a href = '#'>
+                        <i class = 'bx bxs-food-menu'></i>
+                        <span class = 'nav-item'> Itinerary</span>
+                    </a>
+                    <span class='tooltip'>Itinerary</span>
+                </li>
+                <li>
+                    <a href = '#'>
+                        <i class = 'bx bx-body'></i>
+                        <span class = 'nav-item'> Receipt</span>
+                    </a>
+                    <span class='tooltip'>Receipt</span>
+                </li>
+            </ul>
+        </div>
+
         <?php
-            echo "<div class='sidebar'>
-                <div class='top'>
-                    <div class='logo'>
-                        <i class = 'bx bxl-codepen'> </i>
-                        <span>CodeCommerce</span>
-
-                    </div>
-                    <i class = 'bx bx-menu' id = 'btn'></i>
-                </div>
-                <div class='user'>
-                    <img src='user-img.png' alt='avacado toast' class = 'user-img'>
-                    <div>
-                        <p class='bold'> Username </p>
-                        <p> Admin</p>
-                    </div>
-                </div>
-                <ul>
-                    <li>
-                        <a href = '#'>
-                            <i class = 'bx bxs-grid-alt'></i>
-                            <span class = 'nav-item'> Destinations</span>
-                        </a>
-                        <span class='tooltip'>Destinations</span>
-                    </li>
-                    <li>
-                        <a href = '#'>
-                            <i class = 'bx bxs-shopping-bag'></i>
-                            <span class = 'nav-item'> Tickets</span>
-                        </a>
-                        <span class='tooltip'>Tickets</span>
-                    </li>
-                    <li>
-                        <a href = '#'>
-                            <i class = 'bx bx-list-check'></i>
-                            <span class = 'nav-item'> Hotels</span>
-                        </a>
-                        <span class='tooltip'>Hotels</span>
-                    </li>
-                    <li>
-                        <a href = '#'>
-                            <i class = 'bx bxs-food-menu'></i>
-                            <span class = 'nav-item'> Itinerary</span>
-                        </a>
-                        <span class='tooltip'>Itinerary</span>
-                    </li>
-                    <li>
-                        <a href = '#'>
-                            <i class = 'bx bx-body'></i>
-                            <span class = 'nav-item'> Receipt</span>
-                        </a>
-                        <span class='tooltip'>Receipt</span>
-                    </li>
-                </ul>
-            </div>";
-
             // Connection info
             $server = "www.sarahs.sgedu.site";
             $userid = "uao61g5w2cwj8";
@@ -122,15 +133,16 @@
             {
                 echo "no results";
             }
+        ?>
 
-
-            echo "<div class='main-content-hotels-tickets'>
+        <div class='main-content-hotels-tickets'>
             <h1>Hotels</h1>
             <h4>Pick from one of our beautiful hotels at low, discounted prices! Add comfort and unlimited perks to make your trip even more memorable</h4>
-            <form onsubmit='return storeChoice()' method='post' action='#'>";
+            <form onsubmit='return storeChoice()' method='post' action='#'>
 
-            echo "<div class='grid-hotels-tickets' id='grid'>";
-
+            <div class='grid-hotels-tickets' id='grid'>
+        
+        <?php
             for($i=0; $i<3; $i++) {
                 echo "<div class='box-hotels-tickets' onclick='changeColor(" . $i . ")'>";
                 echo "<div class='image-container-hotels-tickets'>";
@@ -142,17 +154,23 @@
                 echo "<p>Perks: " . $perks_array[$i] . "</p></div>";
                 echo "</div>";
             }
-            echo "</div>";
-            echo "<input class='button-hotels-tickets' type='submit' value='Next'></input>";
-
-            echo "<input type='hidden' id='hidden_name'></form></div>";
         ?>
+            </div>
+        </div>
+
+        <input class='button-hotels-tickets' type='submit' value='Next'></input>
+        <input type='hidden' id='hidden_name'></form>
+        
+        <div id="footer">
+            <p>Copyright &copy; 2023 TravelMate</p>
+        </div>
 
         <script>
             let btn = document.querySelector('#btn')
             let sidebar = document.querySelector('.sidebar');
         
-            btn.onclick = function(){ 
+            btn.onclick = function(){
+                // document.write("hello"); Test is working 
                 sidebar.classList.toggle('active');
             };
 
