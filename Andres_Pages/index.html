@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/indexStyle.css">
+    <title>TravelMate</title>
+</head>
+<body>
+    <div class="main-content">
+        <div class="container">
+            <div id="navbar">
+                <a href="index.html">
+                    <img src="images/TravelMate.png" alt ="TravelMate Logo" width="125">
+                </a>
+                <ul id="navbar-menu">
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#">REVIEWS</a></li>
+                </ul>
+                <!-- Hamburger Menu -->
+                <button id="menu-button" class="menu-button">&#9776;</button>
+                <ul class="mobile-menu">
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#">REVIEWS</a></li>
+                </ul>
+            </div>
+            <div id="main">
+                <video autoplay loop muted plays-inline class="back-video">
+                    <source src="images/video5.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>HOW IT WORKS</h3>
+                <ul id="app-steps">
+                    <div id="steps-1">
+                        <li>1. Provide information about each traveler, ensuring accurate details for smooth booking.</li>
+                        <li>2. Select your desired travel destination from our list of partnered cities.</li>
+                        <li>3. Browse and choose the best flight option with our sponsored airline&#8212;Delta.</li>
+                    </div>
+                    <div id="steps-2">
+                        <li>4. Explore a curated list of hotels, ranging from budget to luxury options.</li>
+                        <li>5. Add a complimentary attraction to your bucket list at your chosen destination.</li>
+                        <li>6. Access a detailed receipt with a final breakdown of costs.</li>
+                    </div>
+                </ul>
+                <div id="start-app">
+                    <p>Come travel with us!</p>
+                    <button id="start-button">START</button>
+                </div>
+            </div>
+            <div id="footer">
+                <p>Copyright &copy; 2023 TravelMate</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger Menu functionality
+        const menuButton = document.getElementById("menu-button");
+        const mobileMenu = document.querySelector(".mobile-menu");
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove("active");
+        }
+
+        menuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+</body>
+</html>
