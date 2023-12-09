@@ -1,3 +1,5 @@
+
+
 <!-- Notes:
 Author: Sarah Simmons 
 Tutorial Credit: https://www.youtube.com/watch?v=uy1tgKOnPB0
@@ -90,128 +92,56 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
             <div id="main">
 
                Drop Down to Select Location
-               <form action = "selected_destination.php"id = "locationForm" name = "locationForm" method = "post">
-                <label for="locations">Choose a Location:</label>
-                
-                <select id="locations" name ='locations' form = "locationForm">
-                    <?php 
-                    // establish connection info 
-                    $server = "localhost";
-                    $userid = "uao61g5w2cwj8";
-                    $pw = "631g,_5`@%##";
-                    $db = "dbqkcbe0i0659m";
-
-                    // Create connection
-                    $conn = new mysqli($server, $userid, $pw);
-
-                    // Check connection
-                    if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
-                    } else{
-                        echo "Success!";
-                    }
-
-                    // select the database
-                    $conn->select_db($db);
-                    //run a query
-                    $sql = "SELECT * FROM Destinations";
-                    $result = $conn->query($sql);
-                    // $holder = array();
-                    $counter = 1;
-                    while($row = $result->fetch_assoc()){
-                        echo "<option value=". $counter ." >".$row["Name"]."</option>";
-                        // $holder[0] = $row["Image"];
-                        $counter = $counter + 1;
-                    }
-                    //Script
-                    // echo <<< EOT 
-                    // <script>
-                    //     document.getElementById("locations").onchange = function(){
-                    //     obj = document.getElementById("locations");
-                    //     value = obj.value;
-                    //     document.write(hello);
-                    //     }
-                    // </script>
-                    // EOT;
-                    // console.log("0");
-                    // // $hello = 1;
-                    // // echo $hello;
-                    // $result2 = $conn->query($sql);
-                    // $jsonArray = array();
-                    // $hello2;
-                    // // $i = 0;
-                    // while ($row = $result2->fetch_object()) {
-                    //     $hello2 = $row;
-                    // }
-                    
-                    // // $result = $result->fetch_assoc();
-
-                    // echo <<< EOT
-                    // <script>
-                    //     // console.log("1");
-                    //     // var x = $jsonArray;
-                    //     // var y = JSON.parse(x);
-                    //     var x = $hello2->Name;
-
-                    //     document.getElementById("locations").onchange = function(){
-                    //     obj = document.getElementById("locations");
-                    //     value = obj.value;
-                    //     // console.log("1");
-                    //     document.write(x);
-                    //     // console.log("2");
-                    //     }
-                    // </script>
-
-                    // EOT;
-
-
-                    $conn->close();
-                
-                ?>
-                </select>
-                <input type="submit">
-
-              </form>
+                <?php
+                    $item1 = $_REQUEST['locations'];
+                    echo "<p> ". $item1. "</p>";
+                    // Connect to the database show that the selected location is from the requested ID
+                    // Ask how many people on trip
+                    // Ask how many nights on trip
+                ?> 
+               
+              
               
             </div>
             <div id="location">
                 Image Changes Based on Location Selected
+                <?php
+                    $item1 = $_REQUEST['locations'];
+                    echo "<p> ". $item1. "</p>";
+                    // Connect to the database show that the selected location is from the requested ID
+                    // Ask how many people on trip
+                    // Ask how many nights on trip
+                ?> 
+            <form action = "TODO: ADD SHEZA's PAGE NAME"id = "trip-info" name = "trip-info" method = "post">
+                 <label for="people"> How many people will be joining you on your journey?</label>
+                <select id="people_select" name ='people' form = "locationForm" name="selected_destination">
+                    <option value = "1"> 1 </option>
+                    <option value = "1"> 2 </option>
+                    <option value = "1"> 3 </option>
+                    <option value = "1"> 4 </option>
+                    <option value = "1"> 5 </option>
+                </select>
+                <br>
+                <label for="length"> How many days would you like your journey to be?</label>
+                <select id="length_select" name ='length' form = "locationForm" name="selected_destination">
+                    <option value = "1"> 1 </option>
+                    <option value = "1"> 2 </option>
+                    <option value = "1"> 3 </option>
+                    <option value = "1"> 4 </option>
+                    <option value = "1"> 5 </option>
+                </select>
+                <?php
+                    $location = $_REQUEST['locations'];
+                    echo "<input type = 'hidden' name = 'location' value =".$location;
+                ?> 
+                <input type="submit">
+
+            </form>
 
             </div>
             
             <div id="content1">
-                <!-- Need to get database info 
-                <?php 
-                    // establish connection info 
-                    $server = "localhost";
-                    $userid = "uao61g5w2cwj8";
-                    $pw = "631g,_5`@%##";
-                    $db = "dbqkcbe0i0659m";
-
-                    // Create connection
-                    $conn = new mysqli($server, $userid, $pw);
-
-                    // Check connection
-                    if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
-                    } else{
-                        echo "Success!";
-                    }
-
-                    // select the database
-                    $conn->select_db($db);
-                    //run a query
-                    $sql = "SELECT * FROM Destinations";
-                    $result = $conn->query($sql);
-                    while($row = $result->fetch_assoc()){
-                        echo $row["Name"]. "<br>";
-                    }
-
-                    $conn->close();
-                
-                ?>
-                -->
-
+               
                 Information about places
             </div>
             <div id="footer">
@@ -225,7 +155,6 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
         let btn = document.querySelector('#btn')
         let sidebar = document.querySelector('.sidebar');
         var hello = "hello";
-    
         btn.onclick = function(){
             // document.write("hello"); Test is working 
             sidebar.classList.toggle('active');

@@ -22,6 +22,10 @@
 
 /* Main Div Styling  */
 
+ul{
+    overflow-x: visible;
+}
+
 .sidebar{
     position: fixed;
     top: 0;
@@ -33,6 +37,8 @@
     /* 1st is top and bottom, then left and right */
     padding: .4rem .8rem;
     transition: all 0.5s ease;
+    z-index: 100;
+    overflow-x: visible;
 }
 
 .sidebar.active ~ .main-content{
@@ -119,6 +125,7 @@
     width: 90%;
     margin: 0.8rem auto;
     line-height: 50px;
+    overflow-x: visible;
 }
 
 .sidebar ul li a{
@@ -141,6 +148,7 @@
     height: 50px;
     border-radius: 12px;
     line-height: 50px;
+    overflow-x: visible;
 }
 
 /* Get rid of white text when bar not active */
@@ -163,12 +171,17 @@
     line-height: 1.8rem;
     z-index: 20;
     opacity: 0;
+    overflow-x: visible;
+    background-color:#8ECAE6;
+
 }
 
 
 /* Only want them to show when hovered over  - current issue can't see atm*/
 .sidebar ul li:hover .tooltip{
     opacity: 1;
+    z-index: 20;
+    overflow-x: visible;
 }
 
 .sidebar.active ul li .tooltip{
@@ -183,6 +196,7 @@
     left: 80px;
     transition: all 0.5s ease;
     width: calc(100% - 80px);
+    z-index: 10;
     /* padding: 1rem; */
 }
 
