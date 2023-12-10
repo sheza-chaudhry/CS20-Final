@@ -95,6 +95,20 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
                 <?php
                     $item1 = $_REQUEST['locations'];
                     echo "<p> ". $item1. "</p>";
+                    $firstName = $_REQUEST['fname'];
+                    $lastName = $_REQUEST['lname'];
+                    $email = $_REQUEST['email'];
+                    $phone = $_REQUEST['phone'];
+                    $zip = $_REQUEST['zip'];
+                    $city = $_REQUEST['city'];
+                    $address = $_REQUEST['address'];
+                    echo $firstName. "<br>";
+                    echo $lastName. "<br>";
+                    echo $email. "<br>";
+                    echo $phone. "<br>";
+                    echo $zip. "<br>";
+                    echo $city. "<br>";
+                    echo $address. "<br>";
                     // Connect to the database show that the selected location is from the requested ID
                     // Ask how many people on trip
                     // Ask how many nights on trip
@@ -114,27 +128,29 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
                 ?> 
             <form action = "TODO: ADD SHEZA's PAGE NAME"id = "trip-info" name = "trip-info" method = "post">
                  <label for="people"> How many people will be joining you on your journey?</label>
-                <select id="people_select" name ='people' form = "locationForm" name="selected_destination">
+                <select id="people_select" name ='people' form = "locationForm">
                     <option value = "1"> 1 </option>
-                    <option value = "1"> 2 </option>
-                    <option value = "1"> 3 </option>
-                    <option value = "1"> 4 </option>
-                    <option value = "1"> 5 </option>
+                    <option value = "2"> 2 </option>
+                    <option value = "3"> 3 </option>
+                    <option value = "4"> 4 </option>
+                    <option value = "5"> 5 </option>
                 </select>
                 <br>
                 <label for="length"> How many days would you like your journey to be?</label>
-                <select id="length_select" name ='length' form = "locationForm" name="selected_destination">
+                <select id="length_select" name ='length' form = "locationForm">
                     <option value = "1"> 1 </option>
-                    <option value = "1"> 2 </option>
-                    <option value = "1"> 3 </option>
-                    <option value = "1"> 4 </option>
-                    <option value = "1"> 5 </option>
+                    <option value = "2"> 2 </option>
+                    <option value = "3"> 3 </option>
+                    <option value = "4"> 4 </option>
+                    <option value = "5"> 5 </option>
                 </select>
+
                 <input type= "submit">
                 <?php
                     $location = $_REQUEST['locations'];
                     echo "<input type = 'hidden' name = 'location' value =".$location. ">";
                 ?> 
+                
 
             </form>
 
@@ -142,7 +158,38 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
             
             <div id="content1">
                
-                Information about places
+               <?php
+                    $firstName = $_REQUEST['fname'];
+                    $lastName = $_REQUEST['lname'];
+                    $email = $_REQUEST['email'];
+                    $phone = $_REQUEST['phone'];
+                    $zip = $_REQUEST['zip'];
+                    $city = $_REQUEST['city'];
+                    $address = $_REQUEST['address'];
+                    $startMonth = $_REQUEST['startMonth'];
+                    $startDay = $_REQUEST['startDay'];
+                    $startYear = $_REQUEST['startYear'];
+                    $endMonth = $_REQUEST['endMonth'];
+                    $endDay = $_REQUEST['endDay'];
+                    $endYear = $_REQUEST['endYear'];
+
+
+                    echo $firstName. "<br>";
+                    echo $lastName. "<br>";
+                    echo $email. "<br>";
+                    echo $phone. "<br>";
+                    echo $zip. "<br>";
+                    echo $city. "<br>";
+                    echo $address. "<br>";
+                    echo $startMonth. "<br>";
+                    echo $startDay. "<br>";
+                    echo $startYear. "<br>";
+                    echo $endMonth. "<br>";
+                    echo $endDay. "<br>";
+                    echo $endYear. "<br>";
+
+
+                ?>
             </div>
             <div id="footer">
                 Buttons Placed Within
@@ -155,6 +202,7 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
         let btn = document.querySelector('#btn')
         let sidebar = document.querySelector('.sidebar');
         var hello = "hello";
+    
         btn.onclick = function(){
             // document.write("hello"); Test is working 
             sidebar.classList.toggle('active');

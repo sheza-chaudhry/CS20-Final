@@ -29,7 +29,7 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
         <div class="top">
             <div class="logo">
                 <i class='bx bx-world' ></i>
-                <span> Travel Mate</span>
+                <span> TravelMate</span>
 
             </div>
             <i class = "bx bx-menu" id = "btn"></i>
