@@ -86,7 +86,7 @@
             // $destination_ID = $_REQUEST['Destination_ID'];
             // $departure_ID = $REQUEST['Departure_ID'];
             //$destination_ID = $_REQUEST['location']; // Sydney
-            $destination_ID = 5;
+            $destination_ID = $_REQUEST['location'];
             $departure_ID = 1; // JFK
             $num_people = $_REQUEST['people'];
 
@@ -110,13 +110,15 @@
         <div class='main-content-hotels-tickets'>
             <h1>Tickets</h1>
             <h4>TravelMate has partnered up with Delta Airlines to give you the best offer possible! Note: Please pay attention to all travel restrictions!</h4>
-               
+
+        <div class='departureInfo-hotels-tickets'>    
         <?php
             echo"<h5>Departure Airport: " . $dep_name . "</h5>";
-            echo "<p>Descripton: " . $dep_description . "</p>";
+            echo "<p>" . $dep_description . "</p>";
             // TODO: Format this better!
             echo "<img src='" . $dep_image . "'>";
         ?>
+        </div>
                 
         <form onsubmit='return storeChoice()' method='post' action='hotels.php'>
         <div class="grid-hotels-tickets" id="grid">
@@ -140,19 +142,22 @@
     
             for($i=0; $i<3; $i++) {
                 echo "<div class='box-hotels-tickets' onclick='changeColor(" . $i . ")' id='box" . $i. "'>";
-                // echo "<img src='" . $image_array[$i] . "'";
+                echo "<div class='image-container-hotels-tickets'>";
                 if($i == 0) {
+                    echo "<img src='first_class.jpg';>";
                     echo "<p>First Class</p>";   
                 } else if ($i == 1) {
+                    echo "<img src='business_class.jpg';>";
                     echo "<p>Business Class</p>"; 
                 } else if ($i == 2) {
+                    echo "<img src='economy_class.jpg';>";
                     echo "<p>Economy Class</p>"; 
                 }
-                  
+                echo "</div>";
                 echo "<div class='info-container-hotels-tickets'>";
                 echo "<p>Price per ticket: $" . $prices[$i] . "</p>";
                 echo "<p>Price for " . $num_people . " travelers: $" . ($prices[$i] * $num_people) . "</p>";
-                echo "<h4>Roundtrip price: $" . (($prices[$i] * $num_people) * 2) . "</h4>";
+                echo "<h4>Roundtrip price for " . $num_people . " people: <br>$" . (($prices[$i] * $num_people) * 2) . "</h4>";
                 echo "</div></div>";
             }
 
@@ -161,10 +166,12 @@
             echo "<input type = 'hidden' name = 'location' value =" .$destination_ID. ">";
         ?>
 
-            <p>Travel Restrictions: For travel outside of the United States, make sure you have all required travel documents, 
-            including a valid passport. Baggage size must not exceed 62 inches (158 cm) when you total LENGTH + WIDTH + HEIGHT. 
-            Each passenger flying with Delta can bring 1 carry-on bag and 1 personal item free of charge (such as a purse, laptop bag 
-            or item of similar size that will fit underneath the seat in front of you).</p> 
+            <div class='restrictions'>
+                <p><strong>Travel Restrictions:</strong> For travel outside of the United States, make sure you have all required travel documents, 
+                including a valid passport. Baggage size must not exceed 62 inches (158 cm) when you total LENGTH + WIDTH + HEIGHT. 
+                Each passenger flying with Delta can bring 1 carry-on bag and 1 personal item free of charge (such as a purse, laptop bag 
+                or item of similar size that will fit underneath the seat in front of you).</p> 
+            </div>
 
             <input type='hidden' id='class' name='class'>
             
@@ -203,6 +210,7 @@
             }
 
             function storeChoice() {
+                var grid = document.getElementById("grid");
                 found = false;
                 for (i = 0; i < 3; i++) {
                     var id = "box" + i;
