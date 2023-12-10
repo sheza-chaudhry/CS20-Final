@@ -28,7 +28,7 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
     <div class="sidebar">
         <div class="top">
             <div class="logo">
-                <i class = "bx bxl-codepen"> </i>
+                <i class='bx bx-world' ></i>
                 <span> Travel Mate</span>
 
             </div>
@@ -38,42 +38,42 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
         <ul>
             <li>
                 <a href = "#">
-                    <i class = "bx bxs-grid-alt"></i>
+                    <i class='bx bxs-info-circle' ></i>
                     <span class = "nav-item"> Info</span>
                 </a>
                 <span class="tooltip"> Info</span>
             </li>
             <li>
-                <a href = "#">
-                    <i class = "bx bxs-shopping-bag"></i>
-                    <span class = "nav-item"> Destination </span>
+                <a style ="background-color: #fff; color: #023047" class = "focus" href = "#">
+                    <i class='bx bx-map-pin' ></i>
+                    <span style ="background-color: #fff;  color: #023047"class = "nav-item"> Destination </span>
                 </a>
                 <span class="tooltip">Destination</span>
             </li>
             <li>
                 <a href = "#">
-                    <i class = "bx bx-list-check"></i>
+                    <i class='bx bxs-plane-alt'></i>
                     <span class = "nav-item"> Airfare</span>
                 </a>
                 <span class="tooltip">Airfare</span>
             </li>
             <li>
                 <a href = "#">
-                    <i class = "bx bxs-food-menu"></i>
+                    <i class='bx bx-hotel'></i>
                     <span class = "nav-item"> Hotels</span>
                 </a>
                 <span class="tooltip">Hotels</span>
             </li>
             <li>
                 <a href = "#">
-                    <i class = "bx bx-body"></i>
+                    <i class='bx bx-trip'></i>
                     <span class = "nav-item"> Attractions</span>
                 </a>
                 <span class="tooltip">Attractions</span>
             </li>
             <li>
                 <a href = "#">
-                    <i class = "bx bx-location-plus"></i>
+                    <i class='bx bx-receipt'></i>
                     <span class = "nav-item"> Receipt </span>
                 </a>
                 <span class="tooltip">Receipt</span>
@@ -89,11 +89,13 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
 
             <div id="main">
 
-               Drop Down to Select Location
+               <p class = "header" >Destination Selection <p>
+               <p> Select a destination from the drop down below to learn more, click <span class = 'stand-out'> submit </span> when you've made your decision</p>
                <form action = "selected_destination.php"id = "locationForm" name = "locationForm" method = "post">
-                <label for="locations">Choose a Location:</label>
+                <label for="locations" class = "stand-out">Choose a Location:</label>
                 
                 <select id="locations" name ='locations' form = "locationForm">
+                    <option value = "0"> --- </option>
                     <?php 
                     // establish connection info 
                     $server = "localhost";
@@ -168,54 +170,88 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
                     $conn->close();
                 
                 ?>
+                
                 </select>
-                <input type="submit">
+                 <?php
+                    // PHP to send forward variables
+                    // Copy this section on each page
+                    $firstName = $_REQUEST['fname'];
+                    $lastName = $_REQUEST['lname'];
+                    $email = $_REQUEST['email'];
+                    $phone = $_REQUEST['phone'];
+                    $zip = $_REQUEST['zip'];
+                    $city = $_REQUEST['city'];
+                    $address = $_REQUEST['address'];
+                    $startMonth = $_REQUEST['startMonth'];
+                    $startDay = $_REQUEST['startDay'];
+                    $startYear = $_REQUEST['startYear'];
+                    $endMonth = $_REQUEST['endMonth'];
+                    $endDay = $_REQUEST['endDay'];
+                    $endYear = $_REQUEST['endYear'];
+                    // test when return on sd.php
+
+                    echo "<input type = 'hidden' name = 'fname' value =".$firstName.">"; 
+                    echo "<input type = 'hidden' name = 'lname' value =".$lastName.">";
+                    echo "<input type = 'hidden' name = 'email' value =".$email.">";
+                    echo "<input type = 'hidden' name = 'phone' value =".$phone.">";
+                    echo "<input type = 'hidden' name = 'zip' value =".$zip.">";
+                    echo "<input type = 'hidden' name = 'city' value =".$city.">";
+                    echo "<input type = 'hidden' name = 'address' value =".$address.">";
+                    
+                    echo "<input type = 'hidden' name = 'startMonth' value =".$startMonth.">";
+                    echo "<input type = 'hidden' name = 'startDay' value =".$startDay.">";
+                    echo "<input type = 'hidden' name = 'startYear' value =".$startYear.">";
+                    echo "<input type = 'hidden' name = 'endMonth' value =".$endMonth.">";
+                    echo "<input type = 'hidden' name = 'endDay' value =".$endDay.">";
+                    echo "<input type = 'hidden' name = 'endYear' value =".$endYear.">";
+
+
+
+                ?> 
+                <input class="button-hotels-tickets" type="submit" value="Submit">
 
               </form>
               
             </div>
             <div id="location">
-                Image Changes Based on Location Selected
+                <?php
+                    $firstName = $_REQUEST['fname'];
+                    $lastName = $_REQUEST['lname'];
+                    $email = $_REQUEST['email'];
+                    $phone = $_REQUEST['phone'];
+                    $zip = $_REQUEST['zip'];
+                    $city = $_REQUEST['city'];
+                    $address = $_REQUEST['address'];
+                    $startMonth = $_REQUEST['startMonth'];
+                    $startDay = $_REQUEST['startDay'];
+                    $startYear = $_REQUEST['startYear'];
+                    $endMonth = $_REQUEST['endMonth'];
+                    $endDay = $_REQUEST['endDay'];
+                    $endYear = $_REQUEST['endYear'];
+
+
+                    echo $firstName. "<br>";
+                    echo $lastName. "<br>";
+                    echo $email. "<br>";
+                    echo $phone. "<br>";
+                    echo $zip. "<br>";
+                    echo $city. "<br>";
+                    echo $address. "<br>";
+                    echo $startMonth. "<br>";
+                    echo $startDay. "<br>";
+                    echo $startYear. "<br>";
+                    echo $endMonth. "<br>";
+                    echo $endDay. "<br>";
+                    echo $endYear. "<br>";
+
+
+                ?>
+                 <!-- Images for locations are populated into this div-->
 
             </div>
             
             <div id="content1">
-                <!-- Need to get database info 
-                <?php 
-                    // establish connection info 
-                    $server = "localhost";
-                    $userid = "uao61g5w2cwj8";
-                    $pw = "631g,_5`@%##";
-                    $db = "dbqkcbe0i0659m";
-
-                    // Create connection
-                    $conn = new mysqli($server, $userid, $pw);
-
-                    // Check connection
-                    if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
-                    } else{
-                        echo "Success!";
-                    }
-
-                    // select the database
-                    $conn->select_db($db);
-                    //run a query
-                    $sql = "SELECT * FROM Destinations";
-                    $result = $conn->query($sql);
-                    while($row = $result->fetch_assoc()){
-                        echo $row["Name"]. "<br>";
-                    }
-
-                    $conn->close();
-                
-                ?>
-                -->
-
-                Information about places
-            </div>
-            <div id="footer">
-                Buttons Placed Within
+            <!-- Information about locations are populated into this div-->
             </div>
         </div>
     </div>

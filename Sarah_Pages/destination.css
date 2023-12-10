@@ -3,10 +3,11 @@
     padding: 0;
     /* The box-sizing property allows us to include the padding and border in an element's total width and height. */
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-family: 'Tahoma', sans-serif;
     /* ADD TO FIX HEADER - Keep sidebar from disappearing on horizontal scroll */
     overflow-x:auto; /* Hide horizontal scrollbar */
     /* For Planning Purposes - TODO REMOVE*/
+    font-size: 16px;
 }
 
 
@@ -142,6 +143,11 @@ ul{
     color: #023047;
 }
 
+.sidebar ul li a #focus{
+    background-color: #fff;
+    color: #023047;
+}
+
 .sidebar ul li a i{
     min-width: 50px;
     text-align: center;
@@ -172,7 +178,7 @@ ul{
     z-index: 20;
     opacity: 0;
     overflow-x: visible;
-    background-color:#8ECAE6;
+    background-color:#eee;
 
 }
 
@@ -207,12 +213,11 @@ ul{
     height: 100vh; 
     width: 100vw;
     grid-template-columns: 0.5fr 1fr;
-    grid-template-rows: 70px 200px 624.3px 100px;
+    grid-template-rows: 70px 200px 615px;
     grid-template-areas: 
     "nav nav" 
     "content1 main"
     "content1 location"
-    "footer footer"
 ;
 }
 
@@ -231,22 +236,22 @@ ul{
 
 #main{
     grid-area: main;
-    background-color: gray;
+    background-color:white;
     overflow: auto;
 
 }
 
 #content1{
     grid-area: content1;
-    background-color: blue;
+    background-color: #8ECAE6;
 
 }
 
-#footer{
+/* #footer{
     grid-area: footer;
     background-color: green;
 
-}
+} */
 
 #location{
     grid-area: location;
@@ -269,7 +274,7 @@ ul{
 }
 
 #locationForm{
-    padding: 60px;
+    padding: 30px;
 }
 
 #navbar img{
@@ -277,4 +282,96 @@ ul{
     margin: 10px;
     margin-right: 80px;
     
+}
+
+.header{
+    font-size: 26px;
+}
+
+/* Rules for the Information Section */
+
+#content1{
+    padding-top: 25%;
+    grid-area: content1;
+    background-color: #8ECAE6;
+    align-items: center;
+    width: 100%;
+    color: #023047;
+
+
+}
+#content1 p{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px;
+
+}
+
+.stand-out{
+    font-weight: bolder;
+}
+
+#content1 .stand-out{
+
+}
+
+#content1 .header{
+    font-size: 32px;
+    font-weight: bolder;
+    padding: 10px;
+
+
+}
+
+/* Rules for the Location Selection Drop Down */
+
+#main{
+    grid-area: main;
+    background-color:white;
+    overflow: auto;
+    color:#023047;
+
+}
+
+#main select{
+    color: #023047;
+}
+
+#main .header{
+    color: #023047;
+    padding: 10px;
+    padding-top: 40px;
+    font-weight: bolder;
+}
+
+.button-hotels-tickets {
+    margin: auto;
+    margin-top: 5px;
+    right: 50%;
+    top: 30px;
+    left: 40px;
+    font-size: 16px;
+    width: 60px;
+    height: 25px;
+    color: #023047;
+    background-color: #8ECAE6;
+}
+
+.button-hotels-tickets:hover {
+    background-color: #219EBC;
+}
+
+/* Rules for the Location Image Section */
+
+
+#location{
+    grid-area: location;
+    background-color:white; 
+}
+
+#location img{
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 2px solid #023047;
 }
