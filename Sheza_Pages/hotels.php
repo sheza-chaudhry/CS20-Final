@@ -101,10 +101,8 @@
             $conn->select_db($db);
 
             // get destination and number of days
-            // $destination_ID = $_REQUEST['Destination_ID'];
-            // $num_days = $_REQUEST['number_days'];
-            $destination_ID = 5; // Sydney
-            $num_days = 3;
+            $destination_ID = $_REQUEST['location'];
+            $num_days = $_REQUEST['days'];
 
             // run a query
             $sql = "SELECT * FROM Hotels WHERE Destination_ID = " . $destination_ID;
@@ -154,12 +152,18 @@
                 echo "<p>Perks: " . $perks_array[$i] . "</p></div>";
                 echo "</div>";
             }
+
+            $airline_class = $_REQUEST['class'];
+            echo "<input type = 'hidden' name = 'location' value =" .$destination_ID. ">";
+            echo "<input type = 'hidden' name = 'class' value =" .$airline_class. ">";
         ?>
             </div>
         </div>
 
-        <input class='button-hotels-tickets' type='submit' value='Next'></input>
-        <input type='hidden' id='hidden_name'></form>
+        <input class='button-hotels-tickets' type='submit' value='Next'>
+        </form>
+
+        <input type='hidden' id='hotel' name='hotel'>
         
         <div id="footer">
             <p>Copyright &copy; 2023 TravelMate</p>
@@ -192,16 +196,18 @@
             function storeChoice() {
                 found = false;
                 for (i = 0; i < 3; i++) {
-                    if(grid.children[i].style.backgroundColor == "#FFFFFF") {
+                    var id = "box" + i;
+                    if(document.getElementById(id).style.backgroundColor == "rgb(33, 158, 188)") {
                         found = true;
-                        document.getElementById("hidden_name").innerHTML = grid.children[i].innerHTML;
-                        document.write(document.getElementById("hidden_name").innerHTML);
-                        return true;
+                        document.getElementById("hotel").innerHTML = i;
                     }
                 }
 
                 if (!found) {
+                    alert("Please select an option!");
                     return false;
+                } else {
+                    return true;
                 }
             }
         </script>
