@@ -1,0 +1,343 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* ADD TO FIX HEADER - Keep sidebar from disappearing on horizontal scroll */
+    overflow-x:auto; /* Hide horizontal scrollbar */
+    /* For Planning Purposes - TODO REMOVE*/
+}
+
+
+/* Image Styling  */
+.user-img{
+    width: 50px;
+    border-radius: 100%;
+    border: 1px solid #eee;
+    overflow-x: clip; 
+}
+
+/* Main Div Styling  */
+
+ul{
+    overflow-x: visible;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* 100% of the screen's height  */
+    height: 100vh; 
+    width: 80px;
+    background-color: #023047;
+    /* 1st is top and bottom, then left and right */
+    padding: .4rem .8rem;
+    transition: all 0.5s ease;
+    z-index: 100;
+    overflow-x: visible;
+}
+
+.sidebar.active ~ .main-content{
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+/* Make the sidebar wider when activated */
+.sidebar.active{
+    width: 250px;
+}
+
+/* Movev the button when sidebar is active */
+.sidebar.active #btn{
+    left: 90%
+}
+
+/* Styling for the button */
+.sidebar #btn{
+    position: absolute;
+    color: #fff;
+    top: .4rem;
+    left: 50%;
+    font-size: 1.2rem;
+    line-height: 50px;
+    transform: translate(-50%);
+    cursor: pointer;
+}
+
+/* Styling for the logo */
+.sidebar .top .logo{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    pointer-events: none;
+    /* Only want shown when sidebar open */
+    opacity: 0;
+
+}
+
+/* Make logo visible when sidebar is open  */
+.sidebar.active .top .logo{
+    opacity: 1;
+}
+
+/* Font styling for logo */
+.top .logo i{
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+/* Styling for user  */
+.user{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+.user p{
+    color:#fff;
+    opacity: 1;
+    margin-left: 1rem;
+}
+
+/* Toggling for user tag */
+.sidebar p{
+    opacity: 0;
+}
+
+.sidebar.active p{
+    opacity: 1;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+/* Styling for list items */
+.sidebar ul li{
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 100%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+    overflow-x: visible;
+}
+
+.sidebar ul li a{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+}
+
+/* Hover effects  */
+.sidebar ul li a:hover{
+    background-color: #fff;
+    color: #023047;
+}
+
+.sidebar ul li a i{
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    overflow-x: visible;
+}
+
+/* Get rid of white text when bar not active */
+.sidebar .nav-item{
+    opacity: 0;
+}
+
+.sidebar.active .nav-item{
+    opacity: 1;
+}
+
+.sidebar ul li .tooltip{
+    position: absolute;
+    left: 125px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+    border-radius: .6rem;
+    padding: .4rem 1.2rem;
+    line-height: 1.8rem;
+    z-index: 20;
+    opacity: 0;
+    overflow-x: visible;
+    background-color:#eee;
+}
+
+
+/* Only want them to show when hovered over  - current issue can't see atm*/
+.sidebar ul li:hover .tooltip{
+    opacity: 1;
+    z-index: 20;
+    overflow-x: visible;
+}
+
+.sidebar.active ul li .tooltip{
+    display: none;
+}
+
+.main-content {
+    position: relative;
+    background-color: #eee;
+    min-height: 100vh;
+    top:0;
+    left: 80px;
+    transition: all 0.5s ease;
+    width: calc(100% - 80px);
+    z-index: 10;
+    /* padding: 1rem; */
+}
+
+.container{
+    text-align: center;
+    display: grid;
+    justify-content: space-between;
+    height: 100vh; 
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 700px;
+    grid-template-areas: 
+    "nav" 
+    "main";
+}
+
+#navbar{
+    text-align: center;
+    grid-area: nav;
+    position: fixed;
+    /* overflow-x: scroll; */
+    width: 100%;
+    height: 70px;
+    background-color: #023047;
+    color: #eee;
+    left: 80px;
+}
+
+#navbar img {
+    width: 70px;
+    margin: 10px;
+    margin-right: 80px;
+}
+
+#main{
+    color: #023047;
+    grid-area: main;
+    background-color: white;
+    overflow: auto;
+}
+
+#main h3 {
+    margin-top: 45px;
+    font-size: 30px;
+}
+
+#subheading {
+    font-size: 20px;
+    letter-spacing: -1px;
+}
+
+#main form {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.image-button {
+    margin-right: 100px;
+}
+
+.image-button img {
+    /* cursor: ; */
+    border-radius: 5%;
+    opacity: 0.5;
+}
+
+.image-button img:hover {
+    width: 260px; 
+    opacity: 1;
+}
+
+input[type="radio"]:checked + img {
+    opacity: 1;
+    width: 260px;
+}
+
+.image-button input {
+    opacity: 0;
+}
+
+.image-button p {
+    max-width: 400px;
+    margin-left: 20px;
+}
+
+.img-title {
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+.img-descrip {
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+@media only screen and (max-width: 1200px) {
+    #main form {
+        display: block;
+    }
+
+    .image-button {
+        margin-right: 0px;
+    }
+
+    .image-button p {
+        margin-left: 10px;
+        text-align: left;
+    }
+
+    .img-descrip {
+        margin-bottom: 50px;
+    }
+
+    .container{
+        text-align: center;
+        display: grid;
+        justify-content: space-between;
+        height: 100vh; 
+        width: 100vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 1000px;
+        grid-template-areas: 
+        "nav" 
+        "main";
+    }
+}
+
+#main button {
+    background-color: #8ECAE6;
+    /* border: none; */
+    cursor: pointer;
+    padding: 5px;
+    width: 100px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #023047;
+    margin-top: 50px;
+}
+
+#main button:hover {
+    background-color: #219EBC;
+}
