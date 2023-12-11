@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contact.css">
+    <title>TravelMate</title>
+</head>
+<body>
+    <div class="main-content">
+        <div class="container">
+            <div id="navbar">
+                <a href="index.html">
+                    <img src="images/TravelMate.png" alt ="TravelMate Logo" width="125">
+                </a>
+                <ul id="navbar-menu">
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="review.html">REVIEW</a></li>
+                </ul>
+                <!-- Hamburger Menu -->
+                <button id="menu-button" class="menu-button">&#9776;</button>
+                <ul class="mobile-menu">
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="review.html">REVIEW</a></li>
+                </ul>
+            </div>
+            <div id="main">
+                <h3>CONTACT US</h3>
+
+                <div id="part1">
+                    <h5 id="subheading">EMAIL</h5>
+                    <p>info@travelmate.com</p>
+                </div>
+
+                <div id="part2">
+                    <h5>PHONE</h5>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+
+                <div id="part3">
+                    <h5>ADDRESS</h5>
+                    <p>TravelMate Headquarters</p>
+                    <p>456 Adventure Avenue</p>
+                    <p>Boston, MA 02101</p>
+                    <p>United States</p>
+                </div>
+            </div>
+            <div id="footer">
+                <p>Copyright &copy; 2023 TravelMate</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger Menu functionality
+        const menuButton = document.getElementById("menu-button");
+        const mobileMenu = document.querySelector(".mobile-menu");
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove("active");
+        }
+
+        menuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+    </script>  
+</body>
+</html>
