@@ -1,0 +1,141 @@
+<!-- Notes:
+Author: Shahadah Manzer
+Tutorial Credit: https://www.youtube.com/watch?v=uy1tgKOnPB0
+Note: Text/Icons are filler text from tutorial, not related to project  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="thanks.css">
+    <style>
+        
+    </style>
+    <title>Thank You! </title>
+</head>
+<body>
+    <!-- Three Main Containers - Sidebar, Top Div, User Div, List, Main  -->
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <i class='bx bx-world' ></i>
+                <span> TravelMate</span>
+
+            </div>
+            <i class = "bx bx-menu" id = "btn"></i>
+        </div>
+       
+        <ul>
+            <li>
+                <a href = "#">
+                    <i class='bx bxs-info-circle' ></i>
+                    <span class = "nav-item"> Info</span>
+                </a>
+                <span class="tooltip"> Info</span>
+            </li>
+            <li>
+                <a href = "#">
+                    <i class='bx bx-map-pin' ></i>
+                    <span class = "nav-item"> Destination </span>
+                </a>
+                <span class="tooltip">Destination</span>
+            </li>
+            <li>
+                <a href = "#">
+                    <i class='bx bxs-plane-alt'></i>
+                    <span class = "nav-item"> Airfare</span>
+                </a>
+                <span class="tooltip">Airfare</span>
+            </li>
+            <li>
+                <a href = "#">
+                    <i class='bx bx-hotel'></i>
+                    <span class = "nav-item"> Hotels</span>
+                </a>
+                <span class="tooltip">Hotels</span>
+            </li>
+            <li>
+                <a href = "#">
+                    <i class='bx bx-trip'></i>
+                    <span class = "nav-item"> Attractions</span>
+                </a>
+                <span class="tooltip">Attractions</span>
+            </li>
+            <li>
+            <a style ="background-color: #fff; color: #023047" class = "focus" href = "#">
+                    <i class='bx bx-receipt'></i>
+                    <span style ="background-color: #fff;  color: #023047" class = "nav-item"> Receipt </span>
+                </a>
+                <span class="tooltip">Receipt</span>
+            </li>
+        </ul>
+    </div>
+
+    <div id="navbar">
+        <img src = "TravelMate_white.png">
+    </div>
+
+
+    <div class="main-content">
+        <div class="container first-container">
+            <div class="image-section">
+                <img src="travelGuy.jpg" alt="BG Image" height="200px">
+                <div class="overlay">
+                    <h1>Thank you for Booking with TravelMate!</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container second-container">
+            <div class="endMessage">
+                <div class="textContent">
+                    <p>
+                        We wish you with safe travels and amazing adventures! Please be on the look out for a confirmation sent to your given email
+                        and/or phone number within the next 3 to 5 minutes. If there are issues, feel free to contact us!
+                    </p>
+                    <h1>Travel Great, TravelMate!</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="StarRatings">
+            <center>
+                <img src="TravelMate.png" alt="Travel Image" class="travelImage" height="50px">
+                <h3> Give us a rating/review! We greatly appreciate your feedback.</h3>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </center>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <p>Copyright &copy; 2023 TravelMate</p>
+    </div>
+
+    <script> 
+        let btn = document.querySelector('#btn')
+        let sidebar = document.querySelector('.sidebar');
+    
+        btn.onclick = function(){
+            // document.write("hello"); Test is working 
+            sidebar.classList.toggle('active');
+        };
+    </script>
+
+
+
+
+</body>
+
+</html>
