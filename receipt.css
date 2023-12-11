@@ -3,40 +3,43 @@
     padding: 0;
     /* The box-sizing property allows us to include the padding and border in an element's total width and height. */
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* ADD TO FIX HEADER  */
-    overflow-x:auto; /* Hide horizontal scrollbar */
-    /* For Planning Purposes */
-    font-weight: bold;
-
-
-
+   font-family: 'Tahoma', sans-serif;
+    /* ADD TO FIX HEADER - Keep sidebar from disappearing on horizontal scroll */
+    /* overflow-x:auto; Hide horizontal scrollbar */
+    /* For Planning Purposes - TODO REMOVE*/
+    font-size: 16px;
 }
 
 
 /* Image Styling  */
 .user-img{
-    /* Unsure why smaller  */
     width: 50px;
     border-radius: 100%;
     border: 1px solid #eee;
-    overflow-x: clip;
+    /* Keeps Image from Shrinking (unsure why occured) */
+    overflow-x: clip; 
+
 }
 
 /* Main Div Styling  */
 
+ul{
+    overflow-x: visible;
+}
+
 .sidebar{
-    /* position: absolute; */
     position: fixed;
     top: 0;
     left: 0;
     /* 100% of the screen's height  */
     height: 100vh; 
     width: 80px;
-    background-color: #12171e;
+    background-color: #023047;
     /* 1st is top and bottom, then left and right */
     padding: .4rem .8rem;
     transition: all 0.5s ease;
+    z-index: 100;
+    overflow-x: visible;
 }
 
 .sidebar.active ~ .main-content{
@@ -44,7 +47,7 @@
     width: calc(100% - 250px);
 }
 
-/* Make the sidebar wider */
+/* Make the sidebar wider when activated */
 .sidebar.active{
     width: 250px;
 }
@@ -123,6 +126,7 @@
     width: 90%;
     margin: 0.8rem auto;
     line-height: 50px;
+    overflow-x: visible;
 }
 
 .sidebar ul li a{
@@ -136,7 +140,12 @@
 /* Hover effects  */
 .sidebar ul li a:hover{
     background-color: #fff;
-    color: #12171e;
+    color: #023047;
+}
+
+.sidebar ul li a #focus{
+    background-color: #fff;
+    color: #023047;
 }
 
 .sidebar ul li a i{
@@ -145,6 +154,7 @@
     height: 50px;
     border-radius: 12px;
     line-height: 50px;
+    overflow-x: visible;
 }
 
 /* Get rid of white text when bar not active */
@@ -167,11 +177,17 @@
     line-height: 1.8rem;
     z-index: 20;
     opacity: 0;
+    overflow-x: visible;
+    background-color:#eee;
+
 }
 
-/* Only want them to show when hovered over  */
+
+/* Only want them to show when hovered over  - current issue can't see atm*/
 .sidebar ul li:hover .tooltip{
     opacity: 1;
+    z-index: 20;
+    overflow-x: visible;
 }
 
 .sidebar.active ul li .tooltip{
@@ -180,47 +196,121 @@
 
 .main-content {
     position: relative;
-    background-color: #eee;
+    background-color: white;
     min-height: 100vh;
-    top:0;
+    top:80px;
     left: 80px;
     transition: all 0.5s ease;
     width: calc(100% - 80px);
     padding: 1rem;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
 }
 
 .container{
     display: flex;
-    justify-content: space-between;
-    border: solid black 3px;
-}
-
-.final {
-    border: solid grey 3px;
-    background-color: rgb(113, 176, 232);
-    margin-top: 25%;
-    margin-right:50%;
-    margin-bottom:25%;
-    width:70%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* border: solid black 3px; */
 }
 
 .previous, .next {
+    margin-top: 30%;
     display: block;
-    margin-top: 20px; /* Adjust the margin as needed */
+    margin-top: 10px; /* Adjust the margin as needed */
     text-align: center;
 }
 
 /* Additional styling as needed */
-.previous {
-    background-color: #008CBA;
-    color: white;
-}
 
 .next {
-    background-color: #008CBA;
+    margin:auto;
+    right:50%;
+    background-color: #023047;
+    width:10%;
     color: white;
+    display: block;
+    text-align: center;
+    margin: auto;
+    right:50%;
+    top: 100px;
+    left:40px;
+    font-size: 20px;
+    width:100px;
+    padding: 5px;
+    color:#023047;
+    background-color: #8ECAE6;
+}
+
+.next:hover {
+    background-color: #219EBC;
+}
+
+h1 {
+    font-size: 30px;
+    color: #023047;
+}
+
+.endMessage {
+    margin-top: 10%;
+    margin-bottom: 3%;
+    font-size: 18px;
+    text-align: center;
+    border:#023047 2px solid;
+}
+
+.checked {
+    color: orange;
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align:left;
+    justify-content: center;
+    height: 100%;
+}
+#my_table {
+    border-collapse: collapse;
+    margin-top: 10%;
+    margin-right:10%;
+    /* margin:auto; */
+    right:50%;
+    padding-top: 25px;
+    font-family: 'Tahoma', sans-serif;
+    border:#023047 2px solid;
+}
+
+.table-container {
+    margin-top: 12%;
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+}
+
+p {
+    font-size: 20px;
+    color: #023047;
+    font-style: bold;
+    text-align: center;
+    height: 20%;
+    margin-bottom: 10%;
+}
+
+#navbar{
+    text-align: center;
+    /* grid-area: nav; */
+    position: fixed;
+    overflow-x: scroll;
+    width: 100%;
+    height: 70px;
+    background-color: #023047;
+    color: #eee;
+    left: 80px;
+}
+
+#navbar img{
+    width: 70px;
+    margin: 10px;
+    margin-right: 80px;
+    
 }
