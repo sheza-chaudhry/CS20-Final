@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/about.css">
+    <title>TravelMate</title>
+</head>
+<body>
+    <div class="main-content">
+        <div class="container">
+            <div id="navbar">
+                <a href="index.html">
+                    <img src="images/TravelMate.png" alt ="TravelMate Logo" width="125">
+                </a>
+                <ul id="navbar-menu">
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="review.html">REVIEW</a></li>
+                </ul>
+                <!-- Hamburger Menu -->
+                <button id="menu-button" class="menu-button">&#9776;</button>
+                <ul class="mobile-menu">
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="review.html">REVIEW</a></li>
+                </ul>
+            </div>
+            <div id="main">
+                <h3>WELCOME TO TRAVELMATE</h3>
+                <p>
+                    <strong>TravelMate</strong> is not just a travel planning website; it's your passport to a world of adventures.
+                    We understand that every journey is unique, and that's why we are dedicated to providing personalized travel
+                    experiences for every traveler.
+                </p>
+                <p>
+                    Our platform offers a plethora of features, from discovering <strong>hidden gems</strong> and local favorites
+                    to creating detailed itineraries tailored to your interests. Whether you're an avid explorer, a food enthusiast,
+                    or someone seeking relaxation, <strong>TravelMate</strong> has curated travel suggestions just for you.
+                </p>
+                <p>
+                    At <strong>TravelMate</strong>, we believe in the transformative power of travel. It's not just about visiting new
+                    places; it's about embracing different cultures, trying new cuisines, and creating memories that last a lifetime.
+                    Our team of passionate travelers and travel experts is here to guide you on your journey, ensuring that every
+                    moment is <strong>extraordinary</strong>.
+                </p>
+                <p>
+                    Join us on a voyage of discovery and make your travel dreams a reality with <strong>TravelMate</strong>. Your next
+                    adventure awaits!
+                </p>
+            </div>
+            <div id="footer">
+                <p>Copyright &copy; 2023 TravelMate</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger Menu functionality
+        const menuButton = document.getElementById("menu-button");
+        const mobileMenu = document.querySelector(".mobile-menu");
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove("active");
+        }
+
+        menuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+    </script>  
+</body>
+</html>
