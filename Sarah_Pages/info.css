@@ -3,37 +3,43 @@
     padding: 0;
     /* The box-sizing property allows us to include the padding and border in an element's total width and height. */
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* ADD TO FIX HEADER  */
+   font-family: 'Tahoma', sans-serif;
+    /* ADD TO FIX HEADER - Keep sidebar from disappearing on horizontal scroll */
     overflow-x:auto; /* Hide horizontal scrollbar */
-    /* For Planning Purposes */
-    font-weight: bold;
+    /* For Planning Purposes - TODO REMOVE*/
+    font-size: 16px;
 }
 
 
 /* Image Styling  */
 .user-img{
-    /* Unsure why smaller  */
     width: 50px;
     border-radius: 100%;
     border: 1px solid #eee;
-    overflow-x: clip;
+    /* Keeps Image from Shrinking (unsure why occured) */
+    overflow-x: clip; 
+
 }
 
 /* Main Div Styling  */
 
+ul{
+    overflow-x: visible;
+}
+
 .sidebar{
-    /* position: absolute; */
     position: fixed;
     top: 0;
     left: 0;
     /* 100% of the screen's height  */
     height: 100vh; 
     width: 80px;
-    background-color: #12171e;
+    background-color: #023047;
     /* 1st is top and bottom, then left and right */
     padding: .4rem .8rem;
     transition: all 0.5s ease;
+    z-index: 100;
+    overflow-x: visible;
 }
 
 .sidebar.active ~ .main-content{
@@ -41,7 +47,7 @@
     width: calc(100% - 250px);
 }
 
-/* Make the sidebar wider */
+/* Make the sidebar wider when activated */
 .sidebar.active{
     width: 250px;
 }
@@ -119,7 +125,8 @@
     height: 50px;
     width: 90%;
     margin: 0.8rem auto;
-    /* line-height: 50px;  Was messing up side icon*/ 
+    line-height: 50px;
+    overflow-x: visible;
 }
 
 .sidebar ul li a{
@@ -133,7 +140,7 @@
 /* Hover effects  */
 .sidebar ul li a:hover{
     background-color: #fff;
-    color: #12171e;
+    color: #023047;
 }
 
 .sidebar ul li a i{
@@ -142,6 +149,7 @@
     height: 50px;
     border-radius: 12px;
     line-height: 50px;
+    overflow-x: visible;
 }
 
 /* Get rid of white text when bar not active */
@@ -164,11 +172,17 @@
     line-height: 1.8rem;
     z-index: 20;
     opacity: 0;
+    overflow-x: visible;
+    background-color:#eee;
+
 }
 
-/* Only want them to show when hovered over  */
+
+/* Only want them to show when hovered over  - current issue can't see atm*/
 .sidebar ul li:hover .tooltip{
     opacity: 1;
+    z-index: 20;
+    overflow-x: visible;
 }
 
 .sidebar.active ul li .tooltip{
@@ -183,6 +197,7 @@
     left: 80px;
     transition: all 0.5s ease;
     width: calc(100% - 80px);
+    z-index: 10;
     /* padding: 1rem; */
 }
 
@@ -193,13 +208,11 @@
     height: 100vh; 
     width: 100vw;
     grid-template-columns: 1fr;
-    grid-template-rows: 48px 200px 624.3px 100px;
+    grid-template-rows: 70px 100px 724.3px;
     grid-template-areas: 
     "nav" 
     "main"
-    "user-form"
-    "footer"
-;
+    "user-form";
 }
 
 
@@ -217,39 +230,111 @@
 
 #main{
     grid-area: main;
-    background-color: gray;
+    background-color: #8ECAE6;
+    color: #023047;
     overflow: auto;
+    border-bottom:2px solid #023047 ;
 
 }
 
 #user-form{
     grid-area: user-form;
-    background-color: #eee;
-    color: #12171e;
+    background-color: white;
+    color: #023047;
 
 }
 
-#footer{
-    grid-area: footer;
-    background-color: green;
 
-}
 
 /* Rules from Sheza's Midterm Form  */
 
 #form, #afterSubmit {
-    border-radius: 20px;
-    background-color: #432818;
-    color: #12171e;
-    padding: 20px;
-    width: 75%;
-    height: 75%;
+    border-radius: 10px;
+    background-color: #8ECAE6;
+    border: solid #023047 2px;
+    color: #023047;
+    width: 40%;
+    height: 55%;
     display: block;
     margin: auto;
     position: relative; 
-    top:30px;   
+    top:30px;
+    padding: 10px;   
+    margin-top: 50px;
 }
 
 #form input{
-    margin: 20px;
+    margin: 10px;
+    height: 35px;
+}
+
+#form{
+    display: block;
+}
+
+#form div{
+    margin: 10px;
+    margin-top: 10px;
+
+}
+
+#form select{
+    color: #023047;
+}
+
+/* Nav bar styling */
+#navbar{
+    text-align: center;
+    grid-area: nav;
+    position: fixed;
+    overflow-x: scroll;
+    width: 100%;
+    height: 70px;
+    background-color: #023047;
+    color: #eee;
+    left: 80px;
+}
+
+#navbar img{
+    width: 70px;
+    margin: 10px;
+    margin-right: 80px;
+    
+}
+
+/* Main Styling */
+
+#main .header p{
+    font-size: 23px;
+}
+
+#main span{
+    padding: 20px;
+}
+
+#main .bolder{
+    font-weight: bolder;
+    font-size: 23px;
+    padding: 0;
+}
+
+.formRow{
+    
+}
+
+button{
+    margin-top: 80px;
+    height: 38px;
+    right: 50%;
+    top: 100px;
+    left: 40px;
+    font-size: 16px;
+    width: 100px;
+    color: #023047;
+    background-color: #8ECAE6;
+    padding: 5px;
+}
+
+button:hover {
+    background-color: #219EBC;
 }
