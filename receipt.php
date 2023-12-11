@@ -1,5 +1,5 @@
 <!-- Notes:
-Author: Sarah Simmons 
+Author: Shahadah Manzer 
 Tutorial Credit: https://www.youtube.com/watch?v=uy1tgKOnPB0
 Note: Text/Icons are filler text from tutorial, not related to project  -->
 
@@ -85,6 +85,28 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
             <div class="summary">
             <?php 
 
+
+                //establish connection info
+                $server = "localhost";// your server
+                $userid = "uduadwz9z9x4p"; // your user id
+                $pw = "gwua9kxwnrbh"; // your pw
+                $db= "db1uq7hhucgs27"; // your database
+                        
+                // Create connection
+                $conn = new mysqli($server, $userid, $pw);
+
+                // Check connection
+                if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+                }
+                //echo "Connected successfully<br>";
+                    
+                //select the database
+                $x = $conn->select_db($db);
+                if ($x == false) {
+                    echo "Could not selcet database!";
+                }
+
                 $firstName = $_REQUEST['fname'];
                 $lastName = $_REQUEST['lname'];
                 $email = $_REQUEST['email'];
@@ -99,27 +121,32 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
                 $endDay = $_REQUEST['endDay'];
                 $endYear = $_REQUEST['endYear'];
 
+                $destinationID = $_REQUEST['location'];
+                $numDays = $_REQUEST['days'];
+                $numPeople = $_REQUEST['people'];
 
-                $destination = $_REQUEST['location'];
-                $hotelName = $_REQUEST['hotelName'];
-                $hotelPrice = $_REQUEST['hotelPrice'];
+                $hotelPrice = $_REQUEST['hotel_price'];
+                $ticketPrice = $_REQUEST["ticket_price"];
+
                 $attraction = $_REQUEST["attractionSelection"];
-                $ticketNum = $_REQUEST["ticketNum"];
-                $tickPrice = $_REQUEST["Price"] * $ticketNum;
-        
+            
+                //run a query
+                $sqlDestination = "SELECT Location FROM Attractions WHERE DescriptionID = " . $descriptionID . " LIMIT 1";
+                $destination = $conn->query($sqlDestination);
+
                 echo "<div class='table-container'>";
                 echo "<table id='my_table'>";
                 //echo "<p> Order Summary </p>";
                 // display necessary items on screen
                 echo "<tr> <td> Name: " . $firstName . " " . $lastName . "</td> </tr>";
-                echo "<tr> <td> Dates: " . $startMonth . " " . $startDay . " " . $startYear. " to " . 
-                    $endMonth . " " . $endDay . " " . $endYear . "</td> </tr>";
+                echo "<tr> <td> Dates: " . $startMonth . "/" . $startDay . "/" . $startYear. " to " . 
+                    $endMonth . "/" . $endDay . "/" . $endYear . "</td> </tr>";
 
+                echo "<tr> <td> Ticket Price: " . $ticketPrice . "</td> </tr>";
                 echo "<tr> <td> Destination: " . $destination . "</td> </tr>";
-                echo "<tr> <td> Hotel: " . $hotelName . "</td> </tr>";
                 echo "<tr> <td> Hotel Price: " . $hotelPrice . "</td> </tr>";
                 echo "<tr> <td> Attraction: " . $attraction . "</td> </tr>";
-                $total = $hotelPrice + $tickPrice;
+                $total = $hotelPrice + $ticketPrice;
                 echo "<tr> <td> Total: " . $total . "</td> </tr>";
                 echo "</table>";
 

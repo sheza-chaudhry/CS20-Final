@@ -223,11 +223,6 @@ ul{
 /* Additional styling as needed */
 
 .next {
-    margin:auto;
-    right:50%;
-    background-color: #023047;
-    width:10%;
-    color: white;
     display: block;
     text-align: center;
     margin: auto;
@@ -269,14 +264,17 @@ h1 {
     text-align:left;
     justify-content: center;
     height: 100%;
+    padding-left: 30px;
+    padding-right:30px;
 }
 #my_table {
     border-collapse: collapse;
     margin-top: 10%;
     margin-right:10%;
-    /* margin:auto; */
     right:50%;
     padding-top: 25px;
+    padding-left: 30px;
+    padding-right:30px;
     font-family: 'Tahoma', sans-serif;
     border:#023047 2px solid;
 }
