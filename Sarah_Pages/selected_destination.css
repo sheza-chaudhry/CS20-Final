@@ -142,6 +142,11 @@ ul{
     color: #023047;
 }
 
+.sidebar ul li a #focus{
+    background-color: #fff;
+    color: #023047;
+}
+
 .sidebar ul li a i{
     min-width: 50px;
     text-align: center;
@@ -206,61 +211,212 @@ ul{
     justify-content: space-between;
     height: 100vh; 
     width: 100vw;
-    grid-template-columns: 1fr;
-    grid-template-rows: 70px 100px 724.3px;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 70px 200px 615px;
     grid-template-areas: 
-    "nav" 
-    "main"
-    "user-form";
+    "nav nav" 
+    "content1 main"
+    "content1 location"
+;
 }
 
 
 #navbar{
-    text-align: left;
+    text-align: center;
     grid-area: nav;
     position: fixed;
     overflow-x: scroll;
     width: 100%;
-    /* Issue with sidebar (Not sticking to left of screen) */
-    height: 48px;
-    background-color:#12171e;
+    height: 70px;
+    background-color: #023047;
     color: #eee;
+    left: 80px;
 }
 
 #main{
     grid-area: main;
-    background-color: #8ECAE6;
-    color: #023047;
+    background-color:white;
     overflow: auto;
-    border-bottom:2px solid #023047 ;
 
 }
 
-#user-form{
-    grid-area: user-form;
-    background-color: white;
-    color: #023047;
+#content1{
+    grid-area: content1;
+    background-color: #8ECAE6;
 
 }
 
+/* #footer{
+    grid-area: footer;
+    background-color: green;
 
+} */
+
+#location{
+    grid-area: location;
+    background-color: beige;
+}
 
 /* Rules from Sheza's Midterm Form  */
+
+#form, #afterSubmit {
+    border-radius: 20px;
+    background-color: #432818;
+    padding: 20px;
+    width: 75%;
+    height: 75%;
+    display: block;
+    margin: auto;
+    position: relative; 
+    top:30px;
+    color: white;
+}
+
+#locationForm{
+    padding: 30px;
+}
+
+#navbar img{
+    width: 70px;
+    margin: 10px;
+    margin-right: 80px;
+    
+}
+
+.header{
+    font-size: 26px;
+}
+
+/* Rules for the Information Section */
+
+#content1{
+    padding-top: 15%;
+    grid-area: content1;
+    background-color: #8ECAE6;
+    align-items: center;
+    width: 100%;
+    color: #023047;
+    border-right: 2px solid #023047;
+
+}
+#content1 p{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px;
+
+}
+
+.stand-out{
+    font-weight: bolder;
+}
+
+#content1 .stand-out{
+
+
+}
+
+#content1 .header{
+    font-size: 28px;
+    font-weight: bolder;
+    padding: 10px;
+
+}
+
+#content1 img{
+    width: 75%;
+    margin-top: 5%;
+    border: 2px solid #023047;
+}
+
+/* Rules for the Location Selection Drop Down */
+
+#main{
+    grid-area: main;
+    background-color:white;
+    overflow: auto;
+    color:#023047;
+
+}
+
+#main select{
+    color: #023047;
+}
+
+#main p .header{
+    color: #023047;
+    font-size: 26px;
+    font-weight: bolder;
+    padding: 10px;
+    padding-top: 40px;
+}
+
+#main p .small{
+    margin-top: 20px;
+} 
+
+#main .header{
+    color: #023047;
+    padding: 10px;
+    padding-top: 40px;
+    font-weight: bolder;
+}
+
+
+#main form{
+    margin-top: 45px;
+}
+.button-hotels-tickets {
+    margin: auto;
+    margin-top: 5px;
+    right: 50%;
+    top: 30px;
+    left: 40px;
+    font-size: 16px;
+    width: 60px;
+    height: 25px;
+    color: #023047;
+    background-color: #8ECAE6;
+}
+
+.button-hotels-tickets:hover {
+    background-color: #219EBC;
+}
+
+/* Rules for the Location Image Section */
+
+
+#location{
+    grid-area: location;
+    background-color:white; 
+}
+
+#location img{
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 2px solid #023047;
+}
 
 #form, #afterSubmit {
     border-radius: 10px;
     background-color: #8ECAE6;
     border: solid #023047 2px;
     color: #023047;
-    width: 45%;
-    height: 55%;
+    width: 40%;
+    height: 65%;
     display: block;
     margin: auto;
     position: relative; 
     top:30px;
     padding: 10px;   
-    margin-top: 50px;
-    
+    margin-bottom: 20px;
+    font-size: 18px;
+
+
+}
+
+#trip-info{
+    margin-top: 20%;
 }
 
 #form input{
@@ -280,46 +436,6 @@ ul{
 
 #form select{
     color: #023047;
-}
-
-/* Nav bar styling */
-#navbar{
-    text-align: center;
-    grid-area: nav;
-    position: fixed;
-    overflow-x: scroll;
-    width: 100%;
-    height: 70px;
-    background-color: #023047;
-    color: #eee;
-    left: 80px;
-}
-
-#navbar img{
-    width: 70px;
-    margin: 10px;
-    margin-right: 80px;
-    
-}
-
-/* Main Styling */
-
-#main .header p{
-    font-size: 23px;
-}
-
-#main span{
-    padding: 20px;
-}
-
-#main .bolder{
-    font-weight: bolder;
-    font-size: 23px;
-    padding: 0;
-}
-
-.formRow{
-    
 }
 
 button{
@@ -343,16 +459,31 @@ button:hover {
    *{
     font-size: 14px;
   }
+  .container{
+    text-align: center;
+    display: grid;
+    justify-content: space-between;
+    height: 100vh; 
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 220px 615px 615px;
+    grid-template-areas: 
+    "nav" 
+    "main"
+    "content1"
+    "location"
+;
+}
+ 
+ #navbar{
+    left: 0px;
+    height: 80px;
 
-  #main .bolder{
-      font-size: 16px;
-  }
+    }
 
-  #main .header p{
-      font-size: 16px;
-  }
+    
 
-  .sidebar{
+.sidebar{
       display: none;
   }
 
@@ -361,29 +492,29 @@ button:hover {
     left:0;
     transition:none;
     }
-
-    #navbar{
-    left: 0px;
-
-    }
-    #navbar img{
+     #navbar img{
     margin: 10px;
     margin-right:0px;
-    
-    }
-    #form{
-        margin:auto;
-        width: 80%;
-    }
+     }
+
+    #main{
+    height: 220px;
+}
+#content1{
+    padding-top: 10%;
+    border-top: 2px solid #023047;
+    border-bottom: 2px solid #023047;
 
 
 }
 
-@media screen and (max-width: 911px) {
-    
-    #form{
+#location img{
+    width: 90%;
+}
+
+#form{
+        margin:auto;
         width: 80%;
-        height: 70%;
     }
 
 

@@ -23,7 +23,7 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
     <div class="sidebar">
         <div class="top">
             <div class="logo">
-                <i class = "bx bxl-codepen"> </i>
+                <i class='bx bx-world' ></i>
                 <span> Travel Mate</span>
 
             </div>
@@ -32,43 +32,43 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
        
         <ul>
             <li>
-                <a href = "#">
-                    <i class = "bx bxs-grid-alt"></i>
+                <a style ="background-color: #fff;  color: #023047">
+                    <i class='bx bxs-info-circle' ></i>
                     <span class = "nav-item"> Info</span>
                 </a>
                 <span class="tooltip"> Info</span>
             </li>
             <li>
-                <a href = "#">
-                    <i class = "bx bxs-shopping-bag"></i>
+                <a class = "focus">
+                    <i class='bx bx-map-pin' ></i>
                     <span class = "nav-item"> Destination </span>
                 </a>
                 <span class="tooltip">Destination</span>
             </li>
             <li>
-                <a href = "#">
-                    <i class = "bx bx-list-check"></i>
+                <a>
+                    <i class='bx bxs-plane-alt'></i>
                     <span class = "nav-item"> Airfare</span>
                 </a>
                 <span class="tooltip">Airfare</span>
             </li>
             <li>
-                <a href = "#">
-                    <i class = "bx bxs-food-menu"></i>
+                <a>
+                    <i class='bx bx-hotel'></i>
                     <span class = "nav-item"> Hotels</span>
                 </a>
                 <span class="tooltip">Hotels</span>
             </li>
             <li>
-                <a href = "#">
-                    <i class = "bx bx-body"></i>
+                <a>
+                    <i class='bx bx-trip'></i>
                     <span class = "nav-item"> Attractions</span>
                 </a>
                 <span class="tooltip">Attractions</span>
             </li>
             <li>
-                <a href = "#">
-                    <i class = "bx bx-location-plus"></i>
+                <a>
+                    <i class='bx bx-receipt'></i>
                     <span class = "nav-item"> Receipt </span>
                 </a>
                 <span class="tooltip">Receipt</span>
