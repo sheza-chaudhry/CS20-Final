@@ -1,91 +1,96 @@
-<!-- Notes:
-Author: Sarah Simmons 
-Tutorial Credit: https://www.youtube.com/watch?v=uy1tgKOnPB0
-Note: Text/Icons are filler text from tutorial, not related to project  -->
-
-<!-- Page Specific Notes:
-- Need to update Sidebar contents - Want to highlight partb of journey currently on -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="about.css">
-    <title> About Us/Contact</title>
+    <title>TravelMate</title>
 </head>
 <body>
-
-    <!-- Three Main Containers - Sidebar, Top Div, User Div, List, Main  -->
     <div class="main-content">
         <div class="container">
             <div id="navbar">
-                Header
+                <a href="index.html">
+                    <img src="images/TravelMate.png" alt ="TravelMate Logo" width="125">
+                </a>
+                <ul id="navbar-menu">
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="review.html">REVIEW</a></li>
+                </ul>
+                <!-- Hamburger Menu -->
+                <button id="menu-button" class="menu-button">&#9776;</button>
+                <ul class="mobile-menu">
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="review.html">REVIEW</a></li>
+                </ul>
             </div>
-            <div id="about-us">
-               About us
-            </div>
-            <div id="testimonials">
-                Testimonials
-            </div>
-           
-            <div id="content1">
-                Contact Form<br>
-                Filler Form  (Not Final Credit: Sheza from Midterm )
-                <div id="form" style="position: relative; top:30px;">
-                    <form method="get" action="#">
-                        <label for="fname">First name:</label>
-                        <input type="text" id="fname" name="fname"><br>
-            
-                        <label for="lname">Last name:</label>
-                        <input type="text" id="lname" name="lname"><br>
-        
-                        <label for="why">What are you reaching about?</label><br>
-                        <input type="checkbox" value="menuquestion">
-                        <label for="question">Menu or inquiries</label><br>
-                        <input type="checkbox" value="complain">
-                        <label for="question">File a complaint</label><br>
-                        <input type="checkbox" value="suggestion">
-                        <label for="question">Suggestions</label><br>
-                        <input type="checkbox" value="catering">
-                        <label for="question">Catering</label><br>
-                        <input type="checkbox" value="reservation">
-                        <label for="question">Make a reservation</label><br> <br>
-            
-                        <label for="preference">How would you like to get contacted about your inquiry? </label>
-                        <select id="preference">
-                            <option>-- select an option --</option>
-                            <option>Phone</option>
-                            <option>Email</option>
-                        </select> <br>
-            
-                        <label for="phoneOrEmail"></label>
-                        <input id="phoneOrEmail" type="hidden"><br>
-            
-                        <label for="message">Message: </label>
-                        <input type="text" id="message"><br>
-        
-                        <input type="button" id="submit" value="Submit">
-                    </form>
-                </div>
+            <div id="main">
+                <h3>Welcome to TravelMate</h3>
 
+                <p>At TravelMate, we believe that travel is not just about reaching a destination; it's about the journey and the experiences that shape your adventure. We are passionate about providing you with a holistic travel planning experience that goes beyond conventional trip itineraries.
+                </p>
+                
+                <h5> What Sets Us Apart</h5>
+                <p></p>
+                <h4> Holistic Approach</h4>
+                <p>TravelMate is more than just a trip planner. We take a holistic approach to travel, considering not only the destinations but also your interests, preferences, and well-being. Our goal is to ensure that every journey aligns with your unique lifestyle.
+                </p>
+                <h4>Community-driven Insights:</h4>
+                <h4>Wellness on the Road:</h4>
+                <p>Join a community of like-minded travelers who share their insights and recommendations. Discover hidden gems, local favorites, and insider tips that transform your trip into an unforgettable experience.
+                </p>
+                <h5> Our Team</h5>
+                <p>TravelMate was born out of the collaboration of a diverse team of travel enthusiasts, tech experts, and wellness advocates. Together, we are committed to redefining the way you plan and experience your travels.
+                </p>
+                <h5> Join Us on the Journey</h5>
+                <p>Embark on a journey with TravelMate and unlock the full potential of your adventures. Whether you're a solo traveler, a couple seeking a romantic getaway, or a family planning the perfect vacation, we are here to make your travel dreams a reality.
+                </p>
+                <p>Discover. Plan. Experience. Welcome to TravelMate – Your Partner in Every Journey.
+                </p>
+
+
+
+
+                
             </div>
             <div id="footer">
-                Footer
+                <p>Copyright &copy; 2023 TravelMate</p>
             </div>
         </div>
     </div>
 
-    <script> 
-        let btn = document.querySelector('#btn')
-        let sidebar = document.querySelector('.sidebar');
-    
-        btn.onclick = function(){
-            sidebar.classList.toggle('active');
-        };
+    <script>
+        // Hamburger Menu functionality
+        const menuButton = document.getElementById("menu-button");
+        const mobileMenu = document.querySelector(".mobile-menu");
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove("active");
+        }
+
+        menuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+    </script>  
+
+    <script>
+        const feedbackForm = document.getElementById('reviewForm');
+        const feedback = document.getElementById('feedback');
+        
+        feedbackForm.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            var firstNameValue = document.getElementById('firstName').value;
+            document.getElementById('feedback').innerText = "Thank you for the feedback, " + firstNameValue + "!";
+        });
     </script>
 </body>
-
 </html>
