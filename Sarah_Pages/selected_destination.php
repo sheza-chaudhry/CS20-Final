@@ -128,7 +128,7 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
                 ?> 
             <form action = "TODO: ADD SHEZA's PAGE NAME"id = "trip-info" name = "trip-info" method = "post">
                  <label for="people"> How many people will be joining you on your journey?</label>
-                <select id="people_select" name ='people' form = "locationForm">
+                <select id="people_select" name ='people' form = "trip-info">
                     <option value = "1"> 1 </option>
                     <option value = "2"> 2 </option>
                     <option value = "3"> 3 </option>
@@ -137,12 +137,20 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
                 </select>
                 <br>
                 <label for="length"> How many days would you like your journey to be?</label>
-                <select id="length_select" name ='length' form = "locationForm">
+                <select id="length_select" name ='length' form = "trip-info">
                     <option value = "1"> 1 </option>
                     <option value = "2"> 2 </option>
                     <option value = "3"> 3 </option>
                     <option value = "4"> 4 </option>
                     <option value = "5"> 5 </option>
+                </select>
+                <br>
+                <label for="Airport"> Select an Airport to Depart from:</label>
+                <select id="airport_select" name ='airport' form = "trip-info">
+                    <option value = "1"> John F. Kennedy International </option>
+                    <option value = "2"> O'hare International Airport </option>
+                    <option value = "3"> LAX </option>
+                    <option value = "4"> Dallas-Fort Worth International</option>
                 </select>
 
                 <input type= "submit">
