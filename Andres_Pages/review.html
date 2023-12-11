@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/review.css">
+    <title>TravelMate</title>
+</head>
+<body>
+    <div class="main-content">
+        <div class="container">
+            <div id="navbar">
+                <a href="index.html">
+                    <img src="images/TravelMate.png" alt ="TravelMate Logo" width="125">
+                </a>
+                <ul id="navbar-menu">
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="review.html">REVIEW</a></li>
+                </ul>
+                <!-- Hamburger Menu -->
+                <button id="menu-button" class="menu-button">&#9776;</button>
+                <ul class="mobile-menu">
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="review.html">REVIEW</a></li>
+                </ul>
+            </div>
+            <div id="main">
+                <h3>REVIEW US</h3>
+
+                <form id="reviewForm">
+                    <label for="firstName">First Name</label><br>
+                    <input type="text" id="firstName" required><br>
+                    <label for="lastName">Last Name</label><br>
+                    <input type="text" id="lastName" required><br>
+                    <label for="email">Email</label><br>
+                    <input type="text" id="email" required><br>
+                    <label for="review">How did we do?</label><br>
+                    <textarea id="review" rows="4" cols="50" required></textarea><br>
+
+                    <button type="submit" id="submit-button">SUBMIT</button>
+                    <div id="feedback"></div>
+                </form>
+
+                <h5>See what others are saying!</h5>
+                <ul id="reviews">
+                    <li>"I can't believe how much easier my trip planning became with this app. From finding the best flights to discovering hidden gems at my destination, everything was at my fingertips. Highly recommend!"</li>
+                    <li>"This app is a game-changer! It helped me plan my dream vacation effortlessly. The intuitive interface, comprehensive travel guides, and real-time updates on flights and accommodations made the entire experience stress-free. Love it!"</li>
+                    <li>"This app took the stress out of planning. The itinerary feature is brilliant - it helped me organize my days, reserve activities, and even suggested fantastic local restaurants. My vacation was smoother and more enjoyable thanks to this app!"</li>
+                </ul>
+            </div>
+            <div id="footer">
+                <p>Copyright &copy; 2023 TravelMate</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger Menu functionality
+        const menuButton = document.getElementById("menu-button");
+        const mobileMenu = document.querySelector(".mobile-menu");
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove("active");
+        }
+
+        menuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+    </script>  
+
+    <script>
+        const feedbackForm = document.getElementById('reviewForm');
+        const feedback = document.getElementById('feedback');
+        
+        feedbackForm.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            var firstNameValue = document.getElementById('firstName').value;
+            document.getElementById('feedback').innerText = "Thank you for the feedback, " + firstNameValue + "!";
+        });
+    </script>
+</body>
+</html>
