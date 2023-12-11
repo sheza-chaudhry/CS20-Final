@@ -29,11 +29,11 @@ if (isset($_POST['myVariable'])) {
     // Query executed successfully
         while ($row = $result->fetch_assoc()) {
             // Process each row
-            echo $row['Name'] . "<br>";
-            echo $row['Description'] . "<br>";
-            echo $row['Language'] . "<br>";
-            echo $row['Currency'] . "<br>";
-            echo $row['Customs'] . "<br>";
+            echo "<p class = 'header'>".$row['Name'] . "</p><br>";
+            echo "<p class = 'desc'>".$row['Description'] . "</p><br>";
+            echo "<p class = 'lang'> <span class = 'stand-out'>Language:</span> ".$row['Language'] . "</p><br>";
+            echo "<p class = 'curr'> <span class = 'stand-out'>Currency:</span> ".$row['Currency'] . "</p><br>";
+            echo "<p class = 'customs'><span class = 'stand-out'>Customs:</span> ".$row['Customs'] . "</p><br>";
         }
     // $result->free(); // Free the result set
         // echo "worked";  
@@ -47,6 +47,9 @@ if (isset($_POST['myVariable'])) {
     // }
 
     $conn->close();
+
+
+
 
 
 }

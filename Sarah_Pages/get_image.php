@@ -29,7 +29,7 @@ if (isset($_POST['myVariable'])) {
     // Query executed successfully
         while ($row = $result->fetch_assoc()) {
             // Process each row
-            echo "<img src = '". $row['Image'] . "' style='width:500px;height:500px;' ><br>";
+            echo "<img src = '". $row['Image'] . "' ><br>";
         }
     // $result->free(); // Free the result set
         // echo "worked";  
