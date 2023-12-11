@@ -29,7 +29,7 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
         <div class="top">
             <div class="logo">
                 <i class='bx bx-world' ></i>
-                <span> TravelMate</span>
+                <span> Travel Mate</span>
 
             </div>
             <i class = "bx bx-menu" id = "btn"></i>
@@ -185,6 +185,7 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
                     $startMonth = $_REQUEST['startMonth'];
                     $startDay = $_REQUEST['startDay'];
                     $startYear = $_REQUEST['startYear'];
+                    // DELETE
                     $endMonth = $_REQUEST['endMonth'];
                     $endDay = $_REQUEST['endDay'];
                     $endYear = $_REQUEST['endYear'];
@@ -214,38 +215,7 @@ Note: Text/Icons are filler text from tutorial, not related to project  -->
               
             </div>
             <div id="location">
-                <?php
-                    $firstName = $_REQUEST['fname'];
-                    $lastName = $_REQUEST['lname'];
-                    $email = $_REQUEST['email'];
-                    $phone = $_REQUEST['phone'];
-                    $zip = $_REQUEST['zip'];
-                    $city = $_REQUEST['city'];
-                    $address = $_REQUEST['address'];
-                    $startMonth = $_REQUEST['startMonth'];
-                    $startDay = $_REQUEST['startDay'];
-                    $startYear = $_REQUEST['startYear'];
-                    $endMonth = $_REQUEST['endMonth'];
-                    $endDay = $_REQUEST['endDay'];
-                    $endYear = $_REQUEST['endYear'];
-
-
-                    echo $firstName. "<br>";
-                    echo $lastName. "<br>";
-                    echo $email. "<br>";
-                    echo $phone. "<br>";
-                    echo $zip. "<br>";
-                    echo $city. "<br>";
-                    echo $address. "<br>";
-                    echo $startMonth. "<br>";
-                    echo $startDay. "<br>";
-                    echo $startYear. "<br>";
-                    echo $endMonth. "<br>";
-                    echo $endDay. "<br>";
-                    echo $endYear. "<br>";
-
-
-                ?>
+                
                  <!-- Images for locations are populated into this div-->
 
             </div>
